@@ -1,3 +1,0 @@
-Spam - An Instant Messaging application written leveraging Akka
-
-To run and test it use SBT invoke: 'sbt run'
