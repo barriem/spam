@@ -16,10 +16,15 @@ class RouterActor extends Actor {
 
   def receive = {
   	case rr: RoutingRequest => {
-  		rr.presence ? GetPresence(rr.toId) onSuccess {
-  			case userPresence: Option[Presence] => {
-  				userPresence map { _.actorRef ! Message(rr.fromId, rr.content) }
-  			}
+      val presence = context.actorSelection("/user/presence")
+  		presence ? GetPresence(rr.toId) onSuccess {
+  			case userPresence: Presence => {
+          // Only send message if user has presence
+          userPresence.status match {
+            case "Online" => userPresence.ref ! Message(rr.fromId, rr.content)
+            case _ => println(s"Presence is unknown for user ${rr.toId}")
+          }
+        }
   		}
   	}
   }
