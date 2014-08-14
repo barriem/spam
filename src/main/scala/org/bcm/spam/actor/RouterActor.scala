@@ -8,7 +8,7 @@ import akka.pattern.ask
 import akka.util.Timeout
 
 import org.bcm.spam.payload.action.{GetPresence, RoutingRequest}
-import org.bcm.spam.payload.model.{Message, Presence, User}
+import org.bcm.spam.payload.model.{Message, Presence}
 
 class RouterActor extends Actor {
 

@@ -6,19 +6,24 @@ import java.util.Date
 import akka.actor._
 
 import org.bcm.spam.payload.action.{GetPresence, GetUsers, RegisterUser, Prune}
-import org.bcm.spam.payload.model.{Presence, User}
+import org.bcm.spam.payload.model.Presence
 
 class PrescenceActor extends Actor {
-  val usersWithPresence = mutable.Map[String, Presence]()
+  val userIdsWithPresence = mutable.Map[String, Presence]()
 
   def receive = {
     case ru: RegisterUser => {
-      usersWithPresence += ru.id -> Presence(new Date(), "Online", ru.ref)
-      println(s"${ru.id} is now online!")
+      val presence = Presence(ru.id, new Date(), "Online", ru.ref)
+      broadcast(presence)
+      userIdsWithPresence += ru.id -> presence
     }
-    case gp: GetPresence => sender ! usersWithPresence(gp.id)
-    case GetUsers => sender ! usersWithPresence.keys
-    case Prune => usersWithPresence --= usersWithPresence collect { case (u, p) if p.lastUpdate.before(tenMinutesAgo) => u }
+    case gp: GetPresence => sender ! userIdsWithPresence(gp.id)
+    case GetUsers => sender ! userIdsWithPresence.keys
+    case Prune => userIdsWithPresence --= userIdsWithPresence collect { case (u, p) if p.lastUpdate.before(tenMinutesAgo) => u }
+  }
+
+  private def broadcast(presence: Presence) {
+    userIdsWithPresence foreach { case (uid, p) => p.ref ! presence }
   }
 
   private def tenMinutesAgo: Date = {
