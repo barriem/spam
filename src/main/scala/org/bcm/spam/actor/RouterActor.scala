@@ -21,7 +21,7 @@ class RouterActor extends Actor {
   			case userPresence: Presence => {
           // Only send message if user has presence
           userPresence.status match {
-            case "Online" => userPresence.ref ! Message(rr.fromId, rr.content)
+            case "Online" => userPresence.user.ref ! Message(rr.fromId, rr.content)
             case _ => println(s"Presence is unknown for user ${rr.toId}")
           }
         }

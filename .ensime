@@ -1,0 +1,62 @@
+;; If your project contains a lot of files, it is advisable to enable (:disable-source-load-on-startup t)
+;; Otherwise Ensime might incur a massive lag at startup time
+;; See more information about that at http://aemoncannon.github.com/ensime/index.html
+
+(
+  :subprojects (
+    (
+      :name "spam"
+      :module-name "spam"
+      :depends-on-modules (
+      
+      )
+      :package "org.bcm"
+      :version "0.1-SNAPSHOT"
+      :compile-deps (
+        "/Users/barriemcguire/.ivy2/cache/com.typesafe.akka/akka-actor_2.10/jars/akka-actor_2.10-2.3.4.jar"
+        "/Users/barriemcguire/.sbt/boot/scala-2.10.4/lib/scala-library.jar"
+        "/Users/barriemcguire/.ivy2/cache/com.typesafe/config/bundles/config-1.2.1.jar"
+        "/Users/barriemcguire/.ivy2/cache/com.typesafe.akka/akka-remote_2.10/jars/akka-remote_2.10-2.3.4.jar"
+        "/Users/barriemcguire/.ivy2/cache/io.netty/netty/bundles/netty-3.8.0.Final.jar"
+        "/Users/barriemcguire/.ivy2/cache/com.google.protobuf/protobuf-java/bundles/protobuf-java-2.5.0.jar"
+        "/Users/barriemcguire/.ivy2/cache/org.uncommons.maths/uncommons-maths/jars/uncommons-maths-1.2.2a.jar"
+      )
+      :runtime-deps (
+        "/Users/barriemcguire/.ivy2/cache/com.typesafe.akka/akka-actor_2.10/jars/akka-actor_2.10-2.3.4.jar"
+        "/Users/barriemcguire/.sbt/boot/scala-2.10.4/lib/scala-library.jar"
+        "/Users/barriemcguire/.ivy2/cache/com.typesafe/config/bundles/config-1.2.1.jar"
+        "/Users/barriemcguire/.ivy2/cache/com.typesafe.akka/akka-remote_2.10/jars/akka-remote_2.10-2.3.4.jar"
+        "/Users/barriemcguire/.ivy2/cache/io.netty/netty/bundles/netty-3.8.0.Final.jar"
+        "/Users/barriemcguire/.ivy2/cache/com.google.protobuf/protobuf-java/bundles/protobuf-java-2.5.0.jar"
+        "/Users/barriemcguire/.ivy2/cache/org.uncommons.maths/uncommons-maths/jars/uncommons-maths-1.2.2a.jar"
+        "/Users/barriemcguire/dev/bcm/spam/target/scala-2.10/classes"
+        "/Users/barriemcguire/dev/bcm/spam/target/scala-2.10/classes"
+      )
+      :test-deps (
+        "/Users/barriemcguire/.ivy2/cache/com.typesafe.akka/akka-actor_2.10/jars/akka-actor_2.10-2.3.4.jar"
+        "/Users/barriemcguire/.sbt/boot/scala-2.10.4/lib/scala-library.jar"
+        "/Users/barriemcguire/.ivy2/cache/com.typesafe/config/bundles/config-1.2.1.jar"
+        "/Users/barriemcguire/.ivy2/cache/com.typesafe.akka/akka-remote_2.10/jars/akka-remote_2.10-2.3.4.jar"
+        "/Users/barriemcguire/.ivy2/cache/io.netty/netty/bundles/netty-3.8.0.Final.jar"
+        "/Users/barriemcguire/.ivy2/cache/com.google.protobuf/protobuf-java/bundles/protobuf-java-2.5.0.jar"
+        "/Users/barriemcguire/.ivy2/cache/org.uncommons.maths/uncommons-maths/jars/uncommons-maths-1.2.2a.jar"
+        "/Users/barriemcguire/dev/bcm/spam/target/scala-2.10/classes"
+        "/Users/barriemcguire/dev/bcm/spam/target/scala-2.10/test-classes"
+      )
+      :source-roots (
+        "/Users/barriemcguire/dev/bcm/spam/src/main/scala"
+        "/Users/barriemcguire/dev/bcm/spam/src/main/java"
+        "/Users/barriemcguire/dev/bcm/spam/target/scala-2.10/src_managed/main"
+        "/Users/barriemcguire/dev/bcm/spam/src/test/scala"
+        "/Users/barriemcguire/dev/bcm/spam/src/test/java"
+        "/Users/barriemcguire/dev/bcm/spam/target/scala-2.10/src_managed/test"
+      )
+      :scala-version "2.10"
+      :reference-source-roots (
+      
+      )
+      :target "/Users/barriemcguire/dev/bcm/spam/target/scala-2.10/classes"
+      :test-target "/Users/barriemcguire/dev/bcm/spam/target/scala-2.10/test-classes"
+    )
+  )
+)

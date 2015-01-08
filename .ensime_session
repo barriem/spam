@@ -1,0 +1,12 @@
+{
+  "breakpoints": [], 
+  "current_launch_config": "", 
+  "launch_configs": [
+    {
+      "args": "", 
+      "main_class": "org.bcm.spam.Spam", 
+      "name": "", 
+      "remote_address": ""
+    }
+  ]
+}

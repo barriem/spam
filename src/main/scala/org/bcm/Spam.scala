@@ -15,4 +15,3 @@ object Spam extends App {
   system.actorOf(Props[PrescenceActor], "presence")
   system.actorOf(Props[RouterActor], "router")
 }
-
